@@ -1,16 +1,14 @@
-const input = document.querySelector('input');
-const qrCode = document.querySelector('#qrCode');
+const input = document.querySelector("input");
+const qrcode = document.querySelector("#qrcode");
 
-// Eventos
-document.addEventListener('keypress', (e) => {
-    if(e.key === 'Enter') {
-        gerarQRCode();
-    }
+document.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    genQRCode();
+  }
 });
 
-// Funções
-const gerarQRCode = () => {
-    if(!input.value) return;
+function genQRCode() {
+  if (!input.value) return;
 
-    qrCode.src = `https://api.server.com/v1/create-qr-code/?size=150x150&data=${input.value}`;
+  qrcode.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${input.value}`;
 }
